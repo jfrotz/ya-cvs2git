@@ -8,3 +8,5 @@ This includes all of the how-to fixups that we needed to execute in order to get
 You will definitely find expedient workarounds to solving the engineering problem in this solution.
 
 See the fault examples pages for types of faults which require hand-editing your CVS ,v files.
+
+It is hoped that anyone who is on the trailing edge of migration, finds this information useful.
