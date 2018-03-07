@@ -3,29 +3,32 @@
 ---
 ### Symptom - non-ascii checkin comments
 
+<div style='border: 1px; display:block'>
 ----- pass 2 (CleanMetadataPass) -----
 Converting metadata to UTF8...
 Encoding 'ascii' failed for string ... doesn\xe2\x80\x99t have these ...
+</div>
 
 ### Solution - remove non-ascii character strings
 
-cd migrate/cvs2git-tmp
-grep -r "t have these" .
-$EDITOR $FILE
+  - cd migrate/cvs2git-tmp
+  - grep -r "t have these" .
+  - $EDITOR $FILE
 
 Replace the \xe2\x80\x99 with a single quote (').
 ---
 ### Symptom - both cvs file (,v) and deleted file (Attic/) exist
 
-ERROR: <migration file is also a deleted file; you can't have both>
+  - ERROR: <migration file is also a deleted file; you can't have both>
 
 ### Solution
 
-Delete the Attic/$PROBLEM_FILE.
+  - Delete the Attic/$PROBLEM_FILE.
+
 ---
 ### Symptom - CVS locks
 
-A CVS file has a lock present.
+  - A CVS file has a lock present.
 
 ### Solution
 
