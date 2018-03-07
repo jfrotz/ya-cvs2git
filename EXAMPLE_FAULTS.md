@@ -3,19 +3,19 @@
 ---
 ### Symptom - non-ascii checkin comments
 
-<div style='border: 1px; display:block'>
+<blockquote>
 ----- pass 2 (CleanMetadataPass) -----
 Converting metadata to UTF8...
 Encoding 'ascii' failed for string ... doesn\xe2\x80\x99t have these ...
-</div>
+</blockquote>
 
 ### Solution - remove non-ascii character strings
 
   - cd migrate/cvs2git-tmp
   - grep -r "t have these" .
   - $EDITOR $FILE
+    - Replace the \xe2\x80\x99 with a single quote (').
 
-Replace the \xe2\x80\x99 with a single quote (').
 ---
 ### Symptom - both cvs file (,v) and deleted file (Attic/) exist
 
